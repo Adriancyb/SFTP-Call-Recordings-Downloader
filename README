@@ -1,0 +1,43 @@
+# SFTP Call Recordings Downloader + Email Report
+
+Proyecto de ejemplo para automatizar la descarga y validación de archivos (por ejemplo, grabaciones) desde un servidor vía **SFTP (SSH)**, almacenarlos localmente y generar un **reporte por correo** con el resultado realizado en pasantia.
+
+> Nota: Este repositorio usa datos ficticios y no contiene información sensible.
+
+## Qué hace
+- Se conecta a un servidor remoto vía **SSH/SFTP**
+- Recorre una carpeta remota (estructura por fecha)
+- Descarga archivos que no existan en local
+- Valida coincidencia básica por nombres
+- Envía un correo con el resumen (OK / REVISAR)
+
+## Tecnologías
+- Python
+- Paramiko (SFTP)
+- smtplib (correo)
+
+## Contexto
+Basado en un flujo usado durante una pasantía. Este repositorio es una versión **simplificada y anonimizada** con fines educativos y de portfolio.
+
+## Configuración
+Variables de ejemplo dentro del script:
+- `ip`, `puerto`, `usuario`, `clave`
+- `ruta_base`, `carpeta_local_root`
+- `smtp_host`, `smtp_port`, `smtp_user`, `smtp_pass`, `to_email`
+
+## Mejoras pendientes (roadmap)
+- Configuración por variables de entorno (`.env`)
+- Validación por tamaño/hash de archivos
+- Soporte para descargar un rango de días (ej. últimos 5 días)
+- Logging a archivo
+
+## Requisitos
+- Python 3.9+
+- Acceso a un servidor SFTP
+- Acceso a un servidor SMTP
+
+## Instalación
+Clonar el repositorio e instalar dependencias:
+
+```bash
+pip install -r requirements.txt
